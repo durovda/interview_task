@@ -24,12 +24,10 @@ class DataProcessor:
         for text_line in file_as_text_lines:
             if type(text_line) == str:
                 pair = text_line.split(':')
-                if len(pair) != 2:
+                if not self._is_text_line_correct(text_line):
                     continue
                 key = pair[0]
                 value_as_string = pair[1].strip()
-                if not value_as_string.isdigit():
-                    continue
                 value = int(value_as_string)
                 if key in result.keys():
                     for exist_key, exist_value in result.items():
