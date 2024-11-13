@@ -43,3 +43,13 @@ def test_calculate_results():
 
     assert actual_result == expected_result
 
+
+def test_is_text_line_correct():
+    processor = DataProcessor()
+    assert processor._is_text_line_correct('apple: 10')
+
+
+def test_is_text_line_not_correct():
+    processor = DataProcessor()
+    assert not processor._is_text_line_correct('')
+    assert not processor._is_text_line_correct('box of oranges')
