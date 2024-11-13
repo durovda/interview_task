@@ -14,9 +14,7 @@ class DataProcessor:
     def process_file(self, file_name):
         with open(file_name) as file_as_text_lines:
             result = self._calculate_result(file_as_text_lines)
-        print("Итог по всем покупкам:")
-        for key, value in result.items():
-            print(f'{key}: {value}')
+        self._print_result(result)
 
     def _calculate_result(self, file_as_text_lines):
         result = {}
@@ -51,7 +49,13 @@ class DataProcessor:
         else:
             result.update({key: value})
 
+    @staticmethod
+    def _print_result(result_as_dictionary):
+        print("Итог по всем покупкам:")
+        for key, value in result_as_dictionary.items():
+            print(f'{key}: {value}')
+
 
 if __name__ == "__main__":
     processor = DataProcessor()
-    processor.process_file('data_correct.txt')
+    processor.process_file('data.txt')
