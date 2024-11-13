@@ -13,10 +13,10 @@ class DataProcessor:
 
     def process_file(self, file_name):
         file = open(file_name)
-        f = [i for i in file]
-        res = self._calculate_result(f)
+        file_as_text_lines = [i for i in file]
+        result = self._calculate_result(file_as_text_lines)
         print("Итог по всем покупкам:")
-        for key, value in res.items():
+        for key, value in result.items():
             print(f'{key}: {value}')
 
     def _calculate_result(self, file_as_text_lines):
