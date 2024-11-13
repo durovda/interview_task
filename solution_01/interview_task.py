@@ -39,6 +39,16 @@ class DataProcessor:
                     result.update({key: value})
         return result
 
+    @staticmethod
+    def _is_text_line_correct(text_line):
+        pair = text_line.split(':')
+        if len(pair) != 2:
+            return False
+        value_as_string = pair[1].strip()
+        if not value_as_string.isdigit():
+            return False
+        return True
+
 
 if __name__ == "__main__":
     processor = DataProcessor()
