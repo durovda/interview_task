@@ -12,9 +12,8 @@ grape: 6
 class DataProcessor:
 
     def process_file(self, file_name):
-        file = open(file_name)
-        file_as_text_lines = [i for i in file]
-        result = self._calculate_result(file_as_text_lines)
+        with open(file_name) as file_as_text_lines:
+            result = self._calculate_result(file_as_text_lines)
         print("Итог по всем покупкам:")
         for key, value in result.items():
             print(f'{key}: {value}')
