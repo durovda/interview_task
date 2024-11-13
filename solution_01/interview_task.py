@@ -21,10 +21,9 @@ class DataProcessor:
 
     def _calculate_result(self, file_as_text_lines):
         result = {}
-        for i in range(len(file_as_text_lines)):
-            s = file_as_text_lines[i].strip()
-            if type(s) == str:
-                s_list = s.split(':')
+        for text_line in file_as_text_lines:
+            if type(text_line) == str:
+                s_list = text_line.split(':')
                 x = []
                 x.append(s_list[0])
                 x.append(s_list[1])
