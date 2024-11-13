@@ -50,6 +50,15 @@ class DataProcessor:
         value = int(pair[1].strip())
         return key, value
 
+    @staticmethod
+    def _add_data_to_result(key, value, result):
+        if key in result.keys():
+            for exist_key, exist_value in result.items():
+                if key == exist_key:
+                    result[key] = exist_value + value
+        else:
+            result.update({key: value})
+
 
 if __name__ == "__main__":
     processor = DataProcessor()
