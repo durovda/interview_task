@@ -48,9 +48,7 @@ class DataProcessor:
     @staticmethod
     def _add_data_to_result(key, value, result):
         if key in result.keys():
-            for exist_key, exist_value in result.items():
-                if key == exist_key:
-                    result[key] = exist_value + value
+            result[key] += value
         else:
             result.update({key: value})
 
