@@ -25,12 +25,7 @@ class DataProcessor:
             if not self._is_text_line_correct(text_line):
                 continue
             key, value = self._convert_text_line_to_key_value_pair(text_line)
-            if key in result.keys():
-                for exist_key, exist_value in result.items():
-                    if key == exist_key:
-                        result[key] = exist_value + value
-            else:
-                result.update({key: value})
+            self._add_data_to_result(key, value, result)
         return result
 
     @staticmethod
