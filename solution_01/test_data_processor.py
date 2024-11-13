@@ -53,3 +53,9 @@ def test_is_text_line_not_correct():
     processor = DataProcessor()
     assert not processor._is_text_line_correct('')
     assert not processor._is_text_line_correct('box of oranges')
+
+
+def test_convert_text_line_to_key_value_pair():
+    processor = DataProcessor()
+    key, value = processor._convert_text_line_to_key_value_pair('apple: 10')
+    assert key == 'apple' and value == 10
