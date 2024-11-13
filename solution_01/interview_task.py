@@ -9,14 +9,11 @@ grape: 6
 """
 
 
-class data_processor:
+class DataProcessor:
 
-    def __init__(self, filename):
-        self.name = filename
-
-    def processData(self):
+    def process_file(self, file_name):
         res = {}
-        file = open(self.name)
+        file = open(file_name)
         f = [i for i in file]
         for i in range(len(f)):
             s = f[i].strip()
@@ -37,5 +34,6 @@ class data_processor:
         print(res)
 
 
-processor = data_processor('data.txt')
-processor.processData()
+if __name__ == "__main__":
+    processor = DataProcessor()
+    processor.process_file('data.txt')
