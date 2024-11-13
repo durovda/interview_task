@@ -47,6 +47,13 @@ class DataProcessor:
             return False
         return True
 
+    @staticmethod
+    def _convert_text_line_to_key_value_pair(text_line):
+        pair = text_line.split(':')
+        key = pair[0].strip()
+        value = int(pair[1].strip())
+        return key, value
+
 
 if __name__ == "__main__":
     processor = DataProcessor()
