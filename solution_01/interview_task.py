@@ -20,7 +20,7 @@ class DataProcessor:
             print(f'{key}: {value}')
 
     def _calculate_result(self, file_as_text_lines):
-        res = {}
+        result = {}
         for i in range(len(file_as_text_lines)):
             s = file_as_text_lines[i].strip()
             if type(s) == str:
@@ -30,13 +30,13 @@ class DataProcessor:
                 x.append(s_list[1])
                 key = x[0]
                 value = int(x[1])
-                if key in res.keys():
-                    for exist_key, exist_value in res.items():
+                if key in result.keys():
+                    for exist_key, exist_value in result.items():
                         if key == exist_key:
-                            res[key] = exist_value + value
+                            result[key] = exist_value + value
                 else:
-                    res.update({key: value})
-        return res
+                    result.update({key: value})
+        return result
 
 
 if __name__ == "__main__":
