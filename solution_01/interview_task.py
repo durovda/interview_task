@@ -23,12 +23,9 @@ class DataProcessor:
         result = {}
         for text_line in file_as_text_lines:
             if type(text_line) == str:
-                s_list = text_line.split(':')
-                x = []
-                x.append(s_list[0])
-                x.append(s_list[1])
-                key = x[0]
-                value = int(x[1])
+                pair = text_line.split(':')
+                key = pair[0]
+                value = int(pair[1])
                 if key in result.keys():
                     for exist_key, exist_value in result.items():
                         if key == exist_key:
