@@ -40,4 +40,4 @@ class DataProcessor:
 
 if __name__ == "__main__":
     processor = DataProcessor()
-    processor.process_file('data.txt')
+    processor.process_file('data_correct.txt')
