@@ -16,7 +16,8 @@ class DataProcessor:
         f = [i for i in file]
         res = self._calculate_result(f)
         print("Итог по всем покупкам:")
-        print(res)
+        for key, value in res.items():
+            print(f'{key}: {value}')
 
     def _calculate_result(self, file_as_text_lines):
         res = {}
