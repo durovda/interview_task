@@ -22,16 +22,15 @@ class DataProcessor:
     def _calculate_result(self, file_as_text_lines):
         result = {}
         for text_line in file_as_text_lines:
-            if type(text_line) == str:
-                if not self._is_text_line_correct(text_line):
-                    continue
-                key, value = self._convert_text_line_to_key_value_pair(text_line)
-                if key in result.keys():
-                    for exist_key, exist_value in result.items():
-                        if key == exist_key:
-                            result[key] = exist_value + value
-                else:
-                    result.update({key: value})
+            if not self._is_text_line_correct(text_line):
+                continue
+            key, value = self._convert_text_line_to_key_value_pair(text_line)
+            if key in result.keys():
+                for exist_key, exist_value in result.items():
+                    if key == exist_key:
+                        result[key] = exist_value + value
+            else:
+                result.update({key: value})
         return result
 
     @staticmethod
