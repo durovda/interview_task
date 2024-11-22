@@ -19,6 +19,22 @@ def test_calculate_results_when_data_is_correct():
     assert actual_result == expected_result
 
 
+def test_calculate_results_when_number_written_in_words():
+    file_as_text_lines = [
+        'apple: 10',
+        'banana: пять',
+    ]
+
+    expected_result = {
+        'apple': 10,
+    }
+
+    processor = DataProcessor()
+    actual_result = processor._calculate_result(file_as_text_lines)
+
+    assert actual_result == expected_result
+
+
 def test_calculate_results():
     file_as_text_lines = [
         'apple:  10',
