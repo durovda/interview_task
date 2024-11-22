@@ -14,8 +14,8 @@ class DataProcessor:
     @staticmethod
     def process_file(file_name):
         result = {}
-        with open(file_name) as file_as_text_lines:
-            for text_line in file_as_text_lines:
+        with open(file_name) as file_with_text_lines:
+            for text_line in file_with_text_lines:
                 pair = text_line.split(':')
                 if len(pair) != 2:
                     continue
