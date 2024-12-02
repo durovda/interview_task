@@ -1,9 +1,9 @@
 apple:  10
 banana: 5
 orange: три
-grape:  два
+grape:  двадцать три
 
-apple:  3
+apple : 3
 banana: 2
 box of oranges
-grape:  6
+grape : 6
