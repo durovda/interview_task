@@ -16,9 +16,9 @@ class DataProcessor:
             result = self._calculate_result(file_with_text_lines)
         self._print_result(result)
 
-    def _calculate_result(self, file_with_text_lines):
+    def _calculate_result(self, text_lines):
         result = {}
-        for text_line in file_with_text_lines:
+        for text_line in text_lines:
             if not self._is_text_line_correct(text_line):
                 continue
             key, value = self._convert_text_line_to_key_value_pair(text_line)
