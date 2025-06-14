@@ -65,6 +65,11 @@ def test_is_text_line_correct():
     assert processor._is_text_line_correct('apple: 10')
 
 
+def test_is_text_line_not_correct_when_number_written_in_words():
+    processor = DataProcessor()
+    assert not processor._is_text_line_correct('orange: три')
+
+
 def test_is_text_line_not_correct():
     processor = DataProcessor()
     assert not processor._is_text_line_correct('')
@@ -81,13 +86,13 @@ def test_convert_text_line_to_key_value_pair():
 
 def test_add_data_to_result_when_adding_item():
     processor = DataProcessor()
-    result = {'apple': 13}
+    result = {'apple': 10}
     processor._add_data_to_result(key='banana', value=5, result=result)
-    assert result == {'apple': 13, 'banana': 5}
+    assert result == {'apple': 10, 'banana': 5}
 
 
 def test_add_data_to_result_when_updating_item():
     processor = DataProcessor()
     result = {'apple': 10}
-    processor._add_data_to_result('apple', 3, result)
+    processor._add_data_to_result(key='apple', value=3, result=result)
     assert result == {'apple': 13}
