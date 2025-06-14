@@ -1,0 +1,9 @@
+apple : 10
+banana: 9
+apple: -3
+
+banana: ящик
+box of oranges
+
+grape: 7
+orange: 3
